@@ -1,7 +1,14 @@
 const App = () => {
   return (
-    <h1>Crypto app</h1>
-  )
-}
+    <>
+      <div className="container">
+        <h1 className="app-title">
+          Cotizador de <span>criptomonedas</span>{" "}
+        </h1>
+        <div className="content"></div>
+      </div>
+    </>
+  );
+};
 
-export default App
+export default App;
