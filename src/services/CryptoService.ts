@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { CryptoCurrencySchema } from '../../schemas/cryptoSchema';
+import { CryptoCurrencySchema } from '../schemas/cryptoSchema';
 
 async function getCryptos() {
   const url =
