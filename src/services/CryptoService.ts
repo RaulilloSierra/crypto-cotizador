@@ -22,7 +22,6 @@ async function fetchCurrentCryptoPrice(pair: PairType) {
   const {
     data: { DISPLAY },
   } = await axios(priceURL);
-  console.log(DISPLAY)
   const result = CryptoPriceSchema.safeParse(
     DISPLAY[pair.criptocurrency][pair.currency]
   );
