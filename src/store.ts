@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { CryptoCurrency } from "./types";
-import getCryptos from "./components/services/CryptoService";
+import getCryptos from "./services/CryptoService";
 
 type CryptoStore = {
   cryptoCurrencies: CryptoCurrency;
