@@ -1,8 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CryptoSearchForm from "./components/CryptoSearchForm";
 import { useCryptoStore } from "./store";
+import CryptoPriceDisplay from "./components/CryptoPriceDisplay";
+import { PairType } from "./types";
 
 const App = () => {
+  const [pair, setPair] = useState<PairType>({
+    currency: "",
+    criptocurrency: "",
+  });
   const fetchCryptos = useCryptoStore((state) => state.fetchCryptos);
 
   useEffect(() => {
@@ -16,7 +22,8 @@ const App = () => {
           Cotizador de <span>criptomonedas</span>{" "}
         </h1>
         <div className="content">
-          <CryptoSearchForm />
+          <CryptoSearchForm pair={pair} setPair={setPair} />
+          <CryptoPriceDisplay pair={pair} />
         </div>
       </div>
     </>

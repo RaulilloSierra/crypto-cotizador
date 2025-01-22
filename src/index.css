@@ -1,7 +1,7 @@
 :root {
   --font-family: "Poppins", serif;
   --white: rgb(255, 255, 255);
-  --primary: rgb(46, 213, 115);
+  --primary: rgb(104, 195, 163);
   --black: rgb(47, 53, 66);
 }
 
@@ -78,9 +78,33 @@ body {
   text-transform: uppercase;
   margin-top: 2rem;
   transition: background-color 300ms ease;
+  color: var(--white);
 }
 
 .form [type="submit"]:hover {
-  background-color: rgb(0, 119, 182);
-  color: var(--white);
+  background-color: rgb(3, 201, 169);
+}
+
+.result-wrapper h2 {
+  text-align: center;
+}
+
+.result {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.result img {
+  width: 100%;
+}
+
+.result p {
+  margin: 0 0 1rem;
+  font-size: 1.6rem;
+}
+
+.result span {
+  font-weight: 700;
 }

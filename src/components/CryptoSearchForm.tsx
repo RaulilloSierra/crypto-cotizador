@@ -1,16 +1,23 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import {
+  useState,
+  ChangeEvent,
+  FormEvent,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import { currencies } from "../data";
 import { useCryptoStore } from "../store";
 import { PairType } from "../types";
 import ErrorMessage from "./ErrorMessage";
 
-const CryptoSearchForm = () => {
+type CryptoSearchFormTypes = {
+  pair: PairType;
+  setPair: Dispatch<SetStateAction<PairType>>;
+};
+
+const CryptoSearchForm = ({ pair, setPair }: CryptoSearchFormTypes) => {
   const cryptoCurrencies = useCryptoStore((state) => state.cryptoCurrencies);
   const fetchData = useCryptoStore((state) => state.fetchData);
-  const [pair, setPair] = useState<PairType>({
-    currency: "",
-    criptocurrency: "",
-  });
 
   const [error, setError] = useState("");
 
